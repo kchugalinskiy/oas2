@@ -52,16 +52,16 @@ func ConvertPrimitive(val string, typ, format string) (value interface{}, err er
 }
 
 var evaluatesAsTrue = map[string]struct{}{
-	"true":     struct{}{},
-	"1":        struct{}{},
-	"yes":      struct{}{},
-	"ok":       struct{}{},
-	"y":        struct{}{},
-	"on":       struct{}{},
-	"selected": struct{}{},
-	"checked":  struct{}{},
-	"t":        struct{}{},
-	"enabled":  struct{}{},
+	"true":     {},
+	"1":        {},
+	"yes":      {},
+	"ok":       {},
+	"y":        {},
+	"on":       {},
+	"selected": {},
+	"checked":  {},
+	"t":        {},
+	"enabled":  {},
 }
 
 func convertString(val, format string) (interface{}, error) {

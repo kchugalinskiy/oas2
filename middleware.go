@@ -18,6 +18,7 @@ type Middleware interface {
 	Apply(next http.Handler) http.Handler
 }
 
+// TODO: don't use raw errHandler, make validator less complex
 // NewQueryValidator returns new Middleware that validates request query
 // parameters against OpenAPI 2.0 spec.
 func NewQueryValidator(errHandler func(w http.ResponseWriter, errs []error)) Middleware {
