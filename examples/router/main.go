@@ -102,6 +102,8 @@ func errHandler(w http.ResponseWriter, errs []error) {
 		p.Errors = append(p.Errors, item)
 	}
 
+	w.WriteHeader(http.StatusBadRequest)
+	// json encoder will write StatusOK to header if not specified otherwise
 	if err := json.NewEncoder(w).Encode(p); err != nil {
 		log.Fatalln(err)
 	}
